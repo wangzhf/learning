@@ -25,11 +25,14 @@ public class MultiplexerTimeServer implements Runnable {
      */
     public MultiplexerTimeServer(int port){
         try {
+            // 创建多路复用器
             selector = Selector.open();
+            // 打开ServerSocketChannel，用于监听客户端的连接，他是所有客户端连接的父管道
             servChannel = ServerSocketChannel.open();
             // 配置为非阻塞
             servChannel.configureBlocking(false);
             servChannel.socket().bind(new InetSocketAddress(port), 1024);
+            // 将ServerSocketChannel注册到Reactor线程的多路复用器Selector上，监听ACCEPT事件
             servChannel.register(selector, SelectionKey.OP_ACCEPT);
             System.out.println("The time server is start in port: " + port);
         } catch (IOException e) {
