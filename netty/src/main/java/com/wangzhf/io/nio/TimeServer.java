@@ -1,19 +1,18 @@
-package com.wangzhf.aio;
+package com.wangzhf.io.nio;
 
-public class TimeClient {
+public class TimeServer {
 
     public static void main(String[] args) {
         int port = 8080;
-
         if(args != null && args.length > 0){
             try {
                 port = Integer.parseInt(args[0]);
             } catch (NumberFormatException e){
-                // nothing to do
+
             }
         }
 
-        new Thread(new AsyncTimeClientHandler("127.0.0.1", port), "AIO-AsyncTimeClientHandler-001").start();
+        MultiplexerTimeServer timeServer = new MultiplexerTimeServer(port);
+        new Thread(timeServer, "NIO-MultiplexerTimerServer-001").start();
     }
-
 }

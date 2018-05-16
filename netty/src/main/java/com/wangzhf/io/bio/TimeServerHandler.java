@@ -1,4 +1,4 @@
-package com.wangzhf.bio;
+package com.wangzhf.io.bio;
 
 import java.io.BufferedReader;
 import java.io.IOException;

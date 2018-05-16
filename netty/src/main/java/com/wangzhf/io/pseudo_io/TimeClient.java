@@ -1,4 +1,4 @@
-package com.wangzhf.pseudo_io;
+package com.wangzhf.io.pseudo_io;
 
 import java.io.BufferedReader;
 import java.io.IOException;

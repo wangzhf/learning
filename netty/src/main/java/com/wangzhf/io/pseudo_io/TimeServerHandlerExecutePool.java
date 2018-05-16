@@ -1,4 +1,4 @@
-package com.wangzhf.pseudo_io;
+package com.wangzhf.io.pseudo_io;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ExecutorService;
