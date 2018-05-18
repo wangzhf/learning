@@ -7,6 +7,11 @@ import java.util.Arrays;
 
 /**
  * 快速排序，属于内部交换排序
+ * 时间复杂度（平均）： O(nlog_2 n)
+ * 时间复杂度（最坏）： O(n^2)
+ * 时间复杂度（最好）： O(nlog_2 n)
+ * 空间复杂度： O(nlog_2 n)
+ * 稳定性：不稳定
  *
  * 快速排序使用分治法来把一个串（list）分为两个子串（sub-lists）。具体算法描述如下：
  *      1. 从数列中挑出一个元素，称为 “基准”（pivot）；
@@ -41,9 +46,10 @@ public class QuickSort {
             }
         }
         // i位置的值是小于基准值的，i+1的值是大于基准值的，通过该交换，把基准值放到合适的位置
-        SortUtil.swap(arr, i + 1, right);
+        int pivotIndex = i + 1;
+        SortUtil.swap(arr, pivotIndex, right);
         //logger.debug("pivote: " + pivot + ", arr: " + Arrays.toString(arr));
-        return i + 1;
+        return pivotIndex;
     }
 
     public static void main(String[] args) {
