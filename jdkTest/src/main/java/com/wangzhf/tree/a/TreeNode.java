@@ -43,4 +43,14 @@ public class TreeNode {
     public void setParent(TreeNode parent) {
         this.parent = parent;
     }
+
+	@Override
+	public String toString() {
+		return "TreeNode{" +
+				"val=" + val +
+				", left=" + left +
+				", right=" + right +
+				", parent=" + parent +
+				'}';
+	}
 }
