@@ -15,27 +15,33 @@ public class HeapSort {
 	static int[] arr = {55, 4, 2, 12, 6, 8, 9, 33, 22};
 	static int[] arr2 = {1, 2, 3, 4, 5, 8, 9, 33, 22};
 
-	public static void maxHeapify(int[] arr, int i){
+	/**
+	 * 构建最大堆
+	 * @param arr
+	 * @param heapSize 堆中有效元素数量
+	 * @param i 索引位置
+	 */
+	public static void maxHeapify(int[] arr, int heapSize, int i){
 		int left = 2 * i + 1;
 		int right = 2 * i + 2;
-		int len = arr.length;
 		int largest = i;
-		if(left < len && arr[left] > arr[i]){
+		if(left < heapSize && arr[left] > arr[largest]){
 			largest = left;
 		}
-		if(right < len && arr[right] > arr[i]){
+		if(right < heapSize && arr[right] > arr[largest]){
 			largest = right;
 		}
 		if(largest != i) {
 			SortUtil.swap(arr, i, largest);
-			maxHeapify(arr, largest);
+			maxHeapify(arr, heapSize, largest);
 		}
 	}
 
 	public static void buildMaxHeap(int[] arr){
 		int len = arr.length;
-		for(int i = len - 1; i >= 0; i--){
-			maxHeapify(arr, i);
+		// 从最后一个非叶子节点开始
+		for(int i = len / 2; i > 0; i--){
+			maxHeapify(arr, len, i);
 		}
 	}
 
@@ -44,9 +50,10 @@ public class HeapSort {
 		logger.debug("maxHeap: {}", arr);
 		int len = arr.length;
 		for(int i = len - 1; i > 0; i--){
+			// 将最大值放到最后一位，剩下的再次构建最大堆
 			SortUtil.swap(arr, 0, i);
-			len--;
-			maxHeapify(arr, 0);
+			// 最后一位已换成之前大顶堆的最大值，再次构建的时候此值不在堆的范围内
+			maxHeapify(arr, i,0);
 		}
 		logger.debug("After sort: {}", Arrays.toString(arr));
 	}
