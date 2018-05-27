@@ -1,4 +1,4 @@
-package com.wangzhf.hello.domain;
+package com.wangzhf.springboot.hello.domain;
 
 public class Greeting {
 

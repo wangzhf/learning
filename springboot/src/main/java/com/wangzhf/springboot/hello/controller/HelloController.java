@@ -1,7 +1,6 @@
-package com.wangzhf.hello.controller;
+package com.wangzhf.springboot.hello.controller;
 
-import com.wangzhf.hello.domain.Greeting;
-import org.springframework.beans.factory.annotation.Value;
+import com.wangzhf.springboot.hello.domain.Greeting;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

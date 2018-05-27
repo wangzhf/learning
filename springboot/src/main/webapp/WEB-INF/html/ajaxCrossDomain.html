@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax cross domain</title>
+</head>
+<body>
+
+<button onclick="crossDomain()">测试Ajax跨域</button>
+
+<script src="http://wangzhf.com/static/js/jquery-3.3.1.js"></script>
+<script>
+    function crossDomain(){
+        $.ajax({
+            url: "http://wangzhf.com/hello", 
+            dataType: 'jsonp',
+            jsonp: 'callback',
+            type: 'get', 
+            success: function(data){
+                alert('abc');
+            }, error: function(){
+                alert('error');
+            }
+        });
+
+    }
+</script>
+</body>
+</html>
