@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan base-package="com.wangzhf.rpc.netty.client" />
+
+	<context:property-placeholder location="classpath:/netty/client/config-client.properties" />
+
+	<!-- 配置服务器发现组件 -->
+	<bean id="serviceDiscovery" class="com.wangzhf.rpc.netty.client.ServiceDiscovery">
+		<constructor-arg name="registryAddress" value="${registry.address}" />
+	</bean>
+
+	<!-- 配置RPC代理 -->
+	<bean id="rpcProxy" class="com.wangzhf.rpc.netty.client.RpcProxy">
+		<constructor-arg name="serviceDiscovery" ref="serviceDiscovery" />
+	</bean>
+
+</beans>
