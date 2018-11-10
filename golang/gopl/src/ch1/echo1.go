@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-	"os"
 	"strings"
 )
 
@@ -31,13 +29,13 @@ func E3(args []string) (s string) {
 	return strings.Join(args, " ")
 }
 
-func main() {
-	s1 := E1(os.Args)
-	fmt.Println(s1)
+// func main() {
+// 	s1 := E1(os.Args)
+// 	fmt.Println(s1)
 
-	s2 := E2(os.Args)
-	fmt.Println(s2)
+// 	s2 := E2(os.Args)
+// 	fmt.Println(s2)
 
-	s3 := E3(os.Args)
-	fmt.Println(s3)
-}
+// 	s3 := E3(os.Args)
+// 	fmt.Println(s3)
+// }
