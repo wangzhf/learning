@@ -154,7 +154,7 @@ debug: 当此属性设置为true时，将打印出logback内部日志信息，�
             <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${log.home_dir}/debug/%d{yyyy-MM-dd}/${log.file_prefix}-%i.log</fileNamePattern>
+            <fileNamePattern>${LOG_PATH}/debug/%d{yyyy-MM-dd}/${log.file_prefix}-%i.log</fileNamePattern>
             <maxHistory>${log.maxHistory}</maxHistory>
             <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <MaxFileSize>2MB</MaxFileSize>
@@ -174,7 +174,7 @@ debug: 当此属性设置为true时，将打印出logback内部日志信息，�
             <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${log.home_dir}/trace/%d{yyyy-MM-dd}/${log.file_prefix}-%i.log</fileNamePattern>
+            <fileNamePattern>${LOG_PATH}/trace/%d{yyyy-MM-dd}/${log.file_prefix}-%i.log</fileNamePattern>
             <maxHistory>${log.maxHistory}</maxHistory>
             <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <MaxFileSize>2MB</MaxFileSize>
@@ -220,9 +220,9 @@ debug: 当此属性设置为true时，将打印出logback内部日志信息，�
 
     <!-- 生产环境下，将此级别配置为适合的级别，以免日志文件太多或影响程序性能 -->
     <root level="INFO">
-        <appender-ref ref="FILEERROR" />
-        <appender-ref ref="FILEWARN" />
-        <appender-ref ref="FILEINFO" />
+        <!--<appender-ref ref="FILEERROR" />-->
+        <!--<appender-ref ref="FILEWARN" />-->
+        <!--<appender-ref ref="FILEINFO" />-->
 
         <!-- 生产环境将请stdout,testfile去掉 -->
         <appender-ref ref="STDOUT_COLOR" />
