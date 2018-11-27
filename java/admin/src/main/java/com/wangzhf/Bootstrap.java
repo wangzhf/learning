@@ -1,4 +1,4 @@
-package com.wangzhf.admin;
+package com.wangzhf;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
