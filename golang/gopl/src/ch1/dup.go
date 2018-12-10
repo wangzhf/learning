@@ -61,7 +61,7 @@ func countLine(f *os.File, counts map[string]int) {
 	}
 }
 
-func main() {
-	// CountLine1()
-	CountLine2()
-}
+// func main() {
+// 	// CountLine1()
+// 	CountLine2()
+// }
